@@ -46,7 +46,7 @@ Raw T1 Brain MRI
 
 1. **Hybrid Deep Learning Model (`MobileNetV2` + `Vision Transformer`)**:
    - Captures both fine-grained localized cortical textures (MobileNetV2) and global bilateral brain symmetry / ventricular dilation (ViT).
-2. **6 Autonomous Clinical Agents**:
+2. **6 AI Agents**:
    - **Preprocessing Agent**: Noise filtration, CLAHE contrast enhancement, tensor normalization.
    - **Prediction Agent**: Computes probabilities for 4 stages (Non-Demented, Very Mild, Mild, Moderate).
    - **Explainability Agent (Grad-CAM)**: Generates high-resolution saliency maps highlighting the Medial Temporal Lobe, Hippocampus, and Lateral Ventricles.
