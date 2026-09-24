@@ -1,0 +1,6 @@
+{
+  "name": "AlzVision-X",
+  "description": "A Hybrid Deep Learning (MobileNet + ViT) and Agentic AI Framework for Alzheimer's Disease Detection, Grad-CAM Explainability, and Clinical Decision Support.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
