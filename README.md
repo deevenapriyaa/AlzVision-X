@@ -32,7 +32,7 @@ Raw T1 Brain MRI
                       │
                       ▼
      [ 5. Recommendation Agent ] ─── 
-     Formulates stage-tailored medical advice, follow-up intervals, and cognitive assessment protocols
+     - **Recommendation Agent**: Generates rule-based, stage-specific recommendations based on the predicted Alzheimer's stage.
                       │
                       ▼
      [ 6. Data & History Agent ] ─── SQLite Persistence & Longitudinal Auditing
@@ -51,7 +51,7 @@ Raw T1 Brain MRI
    - **Preprocessing Agent**: Noise filtration, CLAHE contrast enhancement, tensor normalization.
    - **Prediction Agent**: Computes probabilities for 4 stages (Non-Demented, Very Mild, Mild, Moderate).
    - **Explainability Agent (Grad-CAM)**: Generates high-resolution saliency maps highlighting the Medial Temporal Lobe, Hippocampus, and Lateral Ventricles.
-   - **Recommendation Agent**: Formulates stage-tailored medical advice, follow-up intervals, and cognitive assessment protocols (MMSE / MoCA).
+   - **Recommendation Agent**: Generates rule-based, stage-specific recommendations based on the predicted Alzheimer's stage..
    - **Report Agent**: Compiles clinical PDF dossiers with patient metadata, confidence scores, and heatmaps.
    - **Data & History Agent**: Manages longitudinal patient timelines in SQLite.
 3. **Longitudinal MRI Differential Comparison**:
@@ -90,7 +90,7 @@ alzvision-x/
 │   │   ├── reports/           # ReportLab PDF generator
 │   │   │   └── pdf_generator.py
 │   │   ├── utils/             # Utility modules
-│   │   │   └── sample_data.py
+│   │   │ 
 │   │   └── main.py            # FastAPI Application Entry
 │   ├── requirements.txt       # Python dependencies
 │   └── run.py                 # Backend launch script
@@ -175,7 +175,8 @@ http://localhost:3000
 | Stage | Clinical Dementia Rating (CDR) | Key Neuropathological Hallmark |
 |---|---|---|
 | **Non-Demented** | CDR 0 | Intact hippocampal volume, preserved cortical mantle |
-| **Very Mild Dementia** | CDR 0.5 (MCI) | Early CA1 hippocampal volume reduction, subjective memory impairment |
+| **Very Mild Dementia** | CDR 0.5 | 
+ | **Very Mild Dementia** | CDR 0.5 | Early-stage cognitive impairment |
 | **Mild Dementia** | CDR 1.0 | Evident entorhinal cortex thinning, episodic memory deficit |
 | **Moderate Dementia** | CDR 2.0 | Pronounced lateral ventriculomegaly, multi-domain cognitive decline |
 
