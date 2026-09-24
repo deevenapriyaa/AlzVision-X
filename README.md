@@ -31,8 +31,7 @@ Raw T1 Brain MRI
     [ 4. Report Generation Agent ] ─── Automated Institutional PDF Dossier
                       │
                       ▼
-     [ 5. Recommendation Agent ] ─── 
-    Generates rule-based, stage-specific recommendations based on the predicted Alzheimer's stage.
+     [ 5. Recommendation Agent ] ─── Generates rule-based, stage-specific recommendations based on the predicted Alzheimer's stage.
                       │
                       ▼
      [ 6. Data & History Agent ] ─── SQLite Persistence & Longitudinal Auditing
