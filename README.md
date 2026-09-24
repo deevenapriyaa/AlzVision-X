@@ -32,7 +32,7 @@ Raw T1 Brain MRI
                       │
                       ▼
      [ 5. Recommendation Agent ] ─── 
-     - **Recommendation Agent**: Generates rule-based, stage-specific recommendations based on the predicted Alzheimer's stage.
+    Generates rule-based, stage-specific recommendations based on the predicted Alzheimer's stage.
                       │
                       ▼
      [ 6. Data & History Agent ] ─── SQLite Persistence & Longitudinal Auditing
