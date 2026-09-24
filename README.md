@@ -1,6 +1,6 @@
 # AlzVision-X: A Hybrid Deep Learning & Agentic AI Framework for Alzheimer's Disease Detection
 
-An end-to-end, full-stack clinical decision support application designed for MRI-based Alzheimer's Disease detection, multi-class staging, explainable AI (Grad-CAM), and autonomous multi-agent clinical synthesis.
+An end-to-end full-stack academic research prototype for MRI-based Alzheimer's Disease detection, multi-class staging, explainable AI (Grad-CAM), longitudinal MRI comparison, and agentic AI workflow orchestration.
 
 ---
 
@@ -22,7 +22,7 @@ Raw T1 Brain MRI
             [ Feature Fusion Layer ] ─── 704-d → 512-d Latent Dense Embedding
                       │
                       ▼
-       [ 2. Disease Prediction Agent ] ─── 4-Class Softmax Staging (CDR 0 to CDR 3.0)
+       [ 2. Disease Prediction Agent ] ─── 4-Class Softmax Staging (CDR 0 to CDR 2.0)
                       │
                       ▼
      [ 3. Grad-CAM Explainability Agent ] ─── Visual Saliency & Hippocampal Atrophy Map
@@ -31,13 +31,14 @@ Raw T1 Brain MRI
     [ 4. Report Generation Agent ] ─── Automated Institutional PDF Dossier
                       │
                       ▼
-     [ 5. Recommendation Agent ] ─── Evidence-Based Clinical Care Pathways
+     [ 5. Recommendation Agent ] ─── 
+     Formulates stage-tailored medical advice, follow-up intervals, and cognitive assessment protocols
                       │
                       ▼
      [ 6. Data & History Agent ] ─── SQLite Persistence & Longitudinal Auditing
                       │
                       ▼
-    [ Doctor Web Dashboard & GUI ] ─── Real-Time Visualizer & Scan Comparison
+    [ Web Dashboard & GUI ] ─── Real-Time Visualization & Scan Comparison
 ```
 
 ---
@@ -55,9 +56,9 @@ Raw T1 Brain MRI
    - **Data & History Agent**: Manages longitudinal patient timelines in SQLite.
 3. **Longitudinal MRI Differential Comparison**:
    - Side-by-side comparative inspection between Baseline and Follow-up scans with synchronized opacity controls and atrophy progression tracking.
-4. **Zero-Setup Demo Mode & Real Weights Mode**:
-   - Automatically runs in **Demo Mode** with realistic deterministic neural simulation, pre-seeded clinical patient cohorts, and reference MRI slices.
-   - Can load custom trained PyTorch `.pth` weights (`backend/models/hybrid_mobilenet_vit.pth`) when available.
+4. **Real MRI Analysis and Longitudinal History**:
+   - Requires an uploaded MRI image for analysis using the trained Hybrid MobileNetV2 + Vision Transformer model.
+   - Stores genuine patient analysis results for history tracking and longitudinal MRI comparison.
 
 ---
 
@@ -88,7 +89,7 @@ alzvision-x/
 │   │   │   └── gradcam.py
 │   │   ├── reports/           # ReportLab PDF generator
 │   │   │   └── pdf_generator.py
-│   │   ├── utils/             # Sample datasets & seeding
+│   │   ├── utils/             # Utility modules
 │   │   │   └── sample_data.py
 │   │   └── main.py            # FastAPI Application Entry
 │   ├── requirements.txt       # Python dependencies
@@ -186,12 +187,12 @@ http://localhost:3000
 |---|---|---|
 | `GET` | `/api/health` | Healthcheck & system status |
 | `GET` | `/api/dashboard` | Aggregated metrics, cohort statistics & recent analyses |
-| `POST` | `/api/analyze` | Execute complete 10-stage AI pipeline on MRI scan |
+| `POST` | `/api/analyze` | `POST` | `/api/analyze` | Execute the complete AI analysis pipeline on an uploaded MRI scan  |
 | `GET` | `/api/patients` | Retrieve list of registered patients |
 | `POST` | `/api/patients` | Register a new patient record |
 | `GET` | `/api/history/{patient_id}` | Retrieve patient's longitudinal MRI scan timeline |
 | `POST` | `/api/compare` | Compute volumetric progression between baseline & follow-up |
-| `POST` | `/api/demo/seed` | Reset & re-populate demo patients and baseline scans |
+
 
 ---
 
